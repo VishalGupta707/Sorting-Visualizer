@@ -13,13 +13,13 @@ public class SortingVisualizer {
     private int speed = 50;
 
     public SortingVisualizer() {
-        // Initialize the GUI
+       
         frame = new JFrame("Sorting Visualizer");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setLayout(new BorderLayout());
 
-        // Create a panel for controls
+        
         JPanel controlPanel = new JPanel();
         controlPanel.setLayout(new BoxLayout(controlPanel, BoxLayout.Y_AXIS)); // Vertical layout
 
@@ -29,14 +29,12 @@ public class SortingVisualizer {
         JButton speed2x = new JButton("2x");
         JButton speed3x = new JButton("3x");
 
-// Algorithm list
         String[] algorithms = {"Bubble Sort", "Selection Sort", "Insertion Sort", "Merge Sort", "Quick Sort"};
         algorithmList = new JList<>(algorithms);
         algorithmList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         algorithmList.setVisibleRowCount(5);
         JScrollPane scrollPane = new JScrollPane(algorithmList);
 
-// Add components to control panel with spacing
         controlPanel.add(resetButton);
         controlPanel.add(Box.createVerticalStrut(10)); // Add vertical spacing
         controlPanel.add(scrollPane);
@@ -63,7 +61,6 @@ public class SortingVisualizer {
             }
         });
 
-        // Create panel for visualization
         panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -73,7 +70,7 @@ public class SortingVisualizer {
         };
         panel.setBackground(Color.BLACK);
 
-        // Add panels to the frame
+        
         frame.add(controlPanel, BorderLayout.WEST);
         frame.add(panel, BorderLayout.CENTER);
 
